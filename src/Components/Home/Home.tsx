@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import Header from '../Header/Header';
 import Products from '../ProductsContainer/Products';
 import { getProducts } from '../Services/Services';
@@ -11,7 +11,11 @@ interface Iproduct {
   price: number;
 }
 
+
 export default function Home() {
+  
+
+
   const [Productss, setProductss] = useState<Iproduct>([]);
 
   useEffect(() => {
@@ -20,10 +24,10 @@ export default function Home() {
     });
   }, []);
   return (
-    <div className='relative'>
-      <Header />
-      <Products />
-      <Modal/>
+    <div className="relative">
+        <Header />
+        <Products />
+        <Modal />
     </div>
   );
 }
